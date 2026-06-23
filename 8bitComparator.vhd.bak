@@ -1,0 +1,19 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL; -- Recommended for arithmetic and comparisons
+
+entity comparator_8bit is
+    port (
+        A, B : in  std_logic_vector(7 downto 0);
+        eq   : out std_logic; -- A equals B
+        gt   : out std_logic; -- A greater than B
+        lt   : out std_logic  -- A less than B
+    );
+end entity;
+
+architecture Behavioral of comparator_8bit is
+begin
+    eq <= '1' when (A = B) else '0';
+    gt <= '1' when (unsigned(A) > unsigned(B)) else '0';
+    lt <= '1' when (unsigned(A) < unsigned(B)) else '0';
+end architecture;

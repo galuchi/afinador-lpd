@@ -1,0 +1,44 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+-- contador de segundos
+entity TimeCounter is
+    Generic (
+        CLK_FREQ_HZ : integer := 100000000 -- Default 100MHz
+    );
+    Port (
+        clk      : in  STD_LOGIC;
+        reset    : in  STD_LOGIC; -- Synchronous reset
+        start_stop : in  STD_LOGIC; -- 1 to run, 0 to pause
+        seconds  : out integer range 0 to 59
+    );
+end TimeCounter;
+
+architecture Behavioral of TimeCounter is
+    signal ticks_reg   : integer range 0 to CLK_FREQ_HZ - 1 := 0;
+    signal seconds_reg : integer range 0 to 59 := 0;
+begin
+    process(clk)
+    begin
+        if rising_edge(clk) then
+            if reset = '1' then
+                ticks_reg <= 0;
+                seconds_reg <= 0;
+            elsif start_stop = '1' then -- Only count if 'Start' is active
+                if ticks_reg = CLK_FREQ_HZ - 1 then
+                    ticks_reg <= 0;
+                    if seconds_reg = 59 then
+                        seconds_reg <= 0;
+                    else
+                        seconds_reg <= seconds_reg + 1;
+                    end if;
+                else
+                    ticks_reg <= ticks_reg + 1;
+                end if;
+            end if;
+        end if;
+    end process;
+
+    seconds <= seconds_reg;
+end Behavioral;

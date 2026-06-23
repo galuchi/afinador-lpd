@@ -1,0 +1,79 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\aluno\Desktop\LPD - 2026.1\ProjetoFinal-Afinador\simulation\modelsim
+Epreciseoscillator
+Z1 w1777381795
+Z2 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+Z3 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z4 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z5 dC:\Users\aluno\Desktop\LPD - 2026.1\ProjetoFinal-Afinador\simulation\modelsim
+Z6 8C:/Users/aluno/Desktop/LPD - 2026.1/ProjetoFinal-Afinador/oscilador.vhd
+Z7 FC:/Users/aluno/Desktop/LPD - 2026.1/ProjetoFinal-Afinador/oscilador.vhd
+l0
+L5
+V>[L_RkaL>;Eig<G[T1ObV0
+!s100 dl9HSQFZHmM8i6h<f2i6_0
+Z8 OV;C;10.1d;51
+31
+!i10b 1
+Z9 !s108 1777384355.638000
+Z10 !s90 -reportprogress|300|-93|-work|work|C:/Users/aluno/Desktop/LPD - 2026.1/ProjetoFinal-Afinador/oscilador.vhd|
+Z11 !s107 C:/Users/aluno/Desktop/LPD - 2026.1/ProjetoFinal-Afinador/oscilador.vhd|
+Z12 o-93 -work work -O0
+Z13 tExplicit 1
+Abehavioral
+R2
+R3
+R4
+DEx4 work 17 preciseoscillator 0 22 >[L_RkaL>;Eig<G[T1ObV0
+l29
+L17
+VSeTG;b0^?k=g@f:DI2TS=3
+!s100 j:e<NmFAA7>i:E8a6n[[M1
+R8
+31
+!i10b 1
+R9
+R10
+R11
+R12
+R13
+Etimecounter
+Z14 w1777377257
+R2
+R3
+R4
+R5
+Z15 8C:/Users/aluno/Desktop/LPD - 2026.1/ProjetoFinal-Afinador/cron-teste.vhd
+Z16 FC:/Users/aluno/Desktop/LPD - 2026.1/ProjetoFinal-Afinador/cron-teste.vhd
+l0
+L6
+VOB?HD`GcJ05WGHDR?HgmJ3
+R8
+31
+Z17 !s108 1777384355.591000
+Z18 !s90 -reportprogress|300|-93|-work|work|C:/Users/aluno/Desktop/LPD - 2026.1/ProjetoFinal-Afinador/cron-teste.vhd|
+Z19 !s107 C:/Users/aluno/Desktop/LPD - 2026.1/ProjetoFinal-Afinador/cron-teste.vhd|
+R12
+R13
+!s100 CnT;EfP8JQ5b>9[aUOjZ81
+!i10b 1
+Abehavioral
+R2
+R3
+R4
+DEx4 work 11 timecounter 0 22 OB?HD`GcJ05WGHDR?HgmJ3
+l21
+L17
+VI0IJ_H1jAADPnOOQ2=AXl2
+R8
+31
+R17
+R18
+R19
+R12
+R13
+!s100 ]9RZNgj0[jHdiD?802dXG0
+!i10b 1

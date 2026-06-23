@@ -1,0 +1,26 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\aluno\Desktop\LPD - 2026.1\ProjetoFinal-Afinador\simulation\modelsim
+vAfinador
+!i10b 1
+!s100 g;HTTlB21o;<bKF7M8ng63
+I=5g991?Ve@f_@UcJ;Vo>S1
+VBZ7o>YbOl;@DgQeCUF>211
+Z1 dC:\Users\aluno\Desktop\LPD - 2026.1\ProjetoFinal-Afinador\simulation\modelsim
+w1777382119
+8Afinador.vo
+FAfinador.vo
+L0 31
+OV;L;10.1d;51
+r1
+!s85 0
+31
+!s108 1777385435.502000
+!s107 Afinador.vo|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+.|Afinador.vo|
+!s101 -O0
+o-vlog01compat -work work -O0
+!s92 -vlog01compat -work work +incdir+. -O0
+n@afinador

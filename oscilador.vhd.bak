@@ -1,0 +1,58 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+entity PreciseOscillator is
+    Generic (
+        CLK_HZ : integer := 50000000 -- Ex: 50MHz
+    );
+    Port (
+        clk_in   : in  STD_LOGIC;
+        reset    : in  STD_LOGIC;
+        selector : in  STD_LOGIC_VECTOR(2 downto 0);
+        wave_out : out STD_LOGIC
+    );
+end PreciseOscillator;
+
+architecture Behavioral of PreciseOscillator is
+    signal counter : integer := 0;
+    signal limit   : integer := 0;
+    signal tmp_wave: STD_LOGIC := '0';
+
+    -- Função auxiliar para calcular o limite com precisão de 4 casas decimais
+    -- Cálculo: (CLK_HZ / (2 * Freq)) - 1
+    function calc_limit(freq_x10000 : integer; clock : integer) return integer is
+    begin
+        return (integer(real(clock) * 10000.0 / (2.0 * real(freq_x10000)))) - 1;
+    end function;
+
+begin
+    process(selector)
+    begin
+        case selector is
+            when "000" => limit <= calc_limit(819323, CLK_HZ); -- 81.9323 Hz -10 cents
+            when "001" => limit <= calc_limit(823148, CLK_HZ); -- 82.3148 Hz -2  cents
+            when "010" => limit <= calc_limit(824100, CLK_HZ); -- 82.4100 Hz (E2)
+            when "011" => limit <= calc_limit(825052, CLK_HZ); -- 82.5052 Hz  2  cents
+            when "100" => limit <= calc_limit(828878, CLK_HZ); -- 82.8878 Hz  10 cents
+            when others => limit <= calc_limit(824100, CLK_HZ);
+        end case;
+    end process;
+
+    process(clk_in, reset)
+    begin
+        if reset = '1' then
+            counter <= 0;
+            tmp_wave <= '0';
+        elsif rising_edge(clk_in) then
+            if counter >= limit then
+                tmp_wave <= NOT tmp_wave;
+                counter <= 0;
+            else
+                counter <= counter + 1;
+            end if;
+        end if;
+    end process;
+
+    wave_out <= tmp_wave;
+end Behavioral;
